@@ -58,7 +58,6 @@ public class LoginPageTest {
 
         loginpage = new LoginPage(driver);
         loginpage.checkLogo(loginpage.logo);
-        Thread.sleep(5000);
         checkHeadingText(loginpage.loginText,"Login");
         checkusername(loginpage.usernameText,"USERNAME");
         checkpassword(loginpage.passwordText,"PASSWORD");
@@ -70,18 +69,13 @@ public class LoginPageTest {
     public void loginPage() throws Exception {
         loginpage = new LoginPage(driver);
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-        Thread.sleep(5000);
         wait.until(ExpectedConditions.elementToBeClickable(loginpage.loginButton)).click();
-        Thread.sleep(5000);
         checkErrorMessageOccured(driver.findElement(By.xpath("//p[@class='error-message']")));
-        Thread.sleep(5000);
         loginpage.enterLoginDetails("Prameela", "prameela123");
         wait.until(ExpectedConditions.elementToBeClickable(loginpage.loginButton)).click();
         checkErrorMessageOccured(driver.findElement(By.xpath("//p[@class='error-message']")));
-        Thread.sleep(5000);
         loginpage.enterLoginDetails("rahul", "rahul@2021");
         wait.until(ExpectedConditions.elementToBeClickable(loginpage.loginButton)).click();
-        Thread.sleep(5000);
 
     }
 }

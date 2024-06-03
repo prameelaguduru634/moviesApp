@@ -52,9 +52,7 @@ public class HeaderSectionTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.enterLoginDetails("rahul", "rahul@2021");
         loginPage.loginButton.click();
-        Thread.sleep(5000);
         driver.findElement(By.xpath("//a[normalize-space()='Popular']")).click();
-        Thread.sleep(5000);
         driver.navigate().back();
         driver.findElement(By.xpath("//img[@alt='profile']")).click();
         driver.navigate().back();

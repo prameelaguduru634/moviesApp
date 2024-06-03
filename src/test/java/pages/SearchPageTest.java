@@ -39,11 +39,8 @@ public class SearchPageTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.enterLoginDetails("rahul", "rahul@2021");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        Thread.sleep(5000);
         wait.until(ExpectedConditions.elementToBeClickable(loginPage.loginButton)).click();
-        Thread.sleep(5000);
         searchPage.enterTextInSearch("Venom");
-        Thread.sleep(5000);
         List<WebElement>  moviesCount = driver.findElements(By.xpath("//li[@class='movie-icon-item']"));
         System.out.println("moviesCount:"+moviesCount.size());
     }

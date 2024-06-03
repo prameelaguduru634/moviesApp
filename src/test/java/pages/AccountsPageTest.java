@@ -33,18 +33,15 @@ public class AccountsPageTest {
         LoginPage loginPage = new LoginPage(driver);
         AccountsPage accountsPage = new AccountsPage(driver);
         loginPage.enterLoginDetails("rahul", "rahul@2021");
-        Thread.sleep(5000);
         loginPage.loginButton.click();
-        Thread.sleep(5000);
         accountsPage.profile.click();
-        Thread.sleep(5000);
         accountsPage.membershipHeading.isDisplayed();
         accountsPage.accountHeading.isDisplayed();
         accountsPage.membershipUsername.isDisplayed();
         accountsPage.membershipPassword.isDisplayed();
         accountsPage.planDetails.isDisplayed();
         accountsPage.logoutButton.click();
-        Thread.sleep(5000);
+
 
 
 

@@ -39,9 +39,7 @@ public class HomePageTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.enterLoginDetails("rahul", "rahul@2021");
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-        Thread.sleep(5000);
         wait.until(ExpectedConditions.elementToBeClickable(loginPage.loginButton)).click();
-        Thread.sleep(5000);
         homePage.checkElementHead(homePage.homeButton);
         homePage.checkAnyElementFindOrNot(homePage.playButton);
         homePage.checkAnyElementFindOrNot(homePage.contactUs);
